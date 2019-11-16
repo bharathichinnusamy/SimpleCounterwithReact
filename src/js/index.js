@@ -24,4 +24,4 @@ setInterval(() => {
 		<SecondsCounter interval={counter} />,
 		document.querySelector("#app")
 	);
-}, 1000);
+}, 100);
