@@ -10,6 +10,18 @@ import "../styles/index.scss";
 
 //import your own components
 import { Home } from "./component/home.js";
+import { SecondsCounter } from "./component/secondscounter";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+var counter = 0;
+ReactDOM.render(
+	<SecondsCounter interval={counter} />,
+	document.querySelector("#app")
+);
+setInterval(() => {
+	counter = counter + 1;
+	ReactDOM.render(
+		<SecondsCounter interval={counter} />,
+		document.querySelector("#app")
+	);
+}, 1000);
